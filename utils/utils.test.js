@@ -11,6 +11,14 @@ it('should add two numbers', () => {
   // }
 });
 
+// Add keyword done for async testing
+it('should async add two numbers', (done) => {
+  utils.asyncAdd(4, 3, (sum) => {
+    expect(sum).toBe(7).toBeA('number');
+    done();
+  });
+})
+
 it('should square a number', () => {
   const res = utils.square(3);
 
@@ -18,6 +26,14 @@ it('should square a number', () => {
   // if (res !== 9) {
   //   throw new Error(`Expected 9, but got ${res}`);
   // }
+});
+
+// Add keyword done for async testing
+it('should async square a number', (done) => {
+  utils.asyncSquare(3, (res) => {
+    expect(res).toBe(9).toBeA('number');
+    done();
+  });
 });
 
 it('should set user firstName and lastName.', () => {
